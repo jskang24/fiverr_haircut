@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "29425779721",
+    "project_id": "haircutlog-1514a",
+    "storage_bucket": "haircutlog-1514a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29425779721:android:0e119ca17d33b109e8e4d8",
+        "android_client_info": {
+          "package_name": "com.accessible_web.haircutlog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29425779721-jvqtrtrllrpdhla0kk1skvc22b2lcmou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBSuyQpRCvKNEyldp0VZSRBffFt6Y0Ods"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29425779721-jvqtrtrllrpdhla0kk1skvc22b2lcmou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

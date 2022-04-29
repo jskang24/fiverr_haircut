@@ -10,7 +10,8 @@ class Variables extends StatefulWidget {
 Color blackColor = Colors.black;
 Color whiteColor = Colors.white;
 Color backGround = Colors.white;
-Color themeColor = Color(0xFF0583D2);
+// Color themeColor = Color(0xFF0583D2);
+Color themeColor = Colors.grey;
 Color backGround2 = Colors.grey;
 Color errorColor = Colors.red;
 String basicFont = 'GowunDodum-Regular';

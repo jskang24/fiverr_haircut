@@ -2,6 +2,9 @@ import 'package:fiverr_haircut/variables.dart' as vr;
 import 'package:flutter/material.dart';
 import './createCut.dart';
 import './checkCut.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DashBoard extends StatefulWidget {
   @override
@@ -9,6 +12,45 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
+  signInAnon() async {
+    bool isAlready = false;
+    await FirebaseAuth.instance.signInAnonymously();
+    String uname = FirebaseAuth.instance.currentUser!.uid;
+    QuerySnapshot querySnapshot =
+        await FirebaseFirestore.instance.collection('users').get();
+    final allData = await querySnapshot.docs.map((doc) => doc.data()).toList();
+    for (var i in allData) {
+      if ((i as Map<String, dynamic>)['uid'] == uname) {
+        isAlready = true;
+      }
+    }
+    if (isAlready == false) {
+      await FirebaseFirestore.instance.collection("users").doc(uname).set({
+        "uid": uname,
+      });
+      await FirebaseFirestore.instance
+          .collection("users")
+          .doc(uname)
+          .collection("logs")
+          .doc("dummy")
+          .set({
+        "timeStamp": "",
+        "typeofCut": "",
+        "shop": "",
+        "date": "",
+        "pictures": "",
+        "memos": "",
+      });
+    }
+  }
+
+  retrieveData() async {}
+
+  initState() {
+    signInAnon();
+    retrieveData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Material(
